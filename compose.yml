@@ -1,0 +1,9 @@
+---
+services:
+  sonar_slack_bot:
+    container_name: sonar-slack-bot
+    hostname: sonar_slack_bot
+    build:
+      context: .
+      dockerfile: Containerfile
+    # command: ???

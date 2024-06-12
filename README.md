@@ -8,9 +8,20 @@
 
 ## Install
 
-- `secret_tool local # extract secrets`
-- `bun install`
+```bash
+secret_tool local # extract secrets`
+bun install
+```
 
 ## Run
 
-`bun run bot.ts`
+```bash
+bun run bot.ts
+```
+
+## Docker/Podman (Cloud)
+
+```bash
+podman build -t awesome_sonar_slack_bot_image -f ./Containerfile .
+podman run -it awesome_sonar_slack_bot_image bun run bot.ts
+```
