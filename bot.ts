@@ -3,7 +3,9 @@ import { App } from "@slack/bolt";
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
+  // signingSecret: process.env.SLACK_SIGNING_SECRET,
+  appToken: process.env.SLACK_BOT_SOCKETS_TOKEN,
+  socketMode: true,
 });
 
 app.event("app_mention", async ({ event, say }) => {
