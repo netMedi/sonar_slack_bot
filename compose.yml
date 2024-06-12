@@ -2,8 +2,14 @@
 services:
   sonar_slack_bot:
     container_name: sonar-slack-bot
+    # entrypoint: bun
+    entrypoint: sh
     hostname: sonar_slack_bot
+    restart: always
     build:
       context: .
       dockerfile: Containerfile
-    # command: ???
+    # command: 'run bot.ts'
+    command: 'entrypoint.sh'
+    volumes:
+      - .:/app:z

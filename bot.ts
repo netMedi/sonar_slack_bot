@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { App } from '@slack/bolt';
 
 const app = new App({
