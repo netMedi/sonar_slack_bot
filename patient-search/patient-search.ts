@@ -31,8 +31,8 @@ export class PatientSearch {
       process.env.SITE_SETTINGS_URL
     );
 
-    // const siteUrls = await siteSettingsClient.getSiteUrls();
-    const siteUrls = ["http://localhost:8080"];
+    const siteUrls = await siteSettingsClient.getSiteUrls();
+    // const siteUrls = ["http://localhost:8080"];
 
     const authToken = await getAuthToken();
 
