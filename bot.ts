@@ -9,6 +9,11 @@ const app = new App({
 });
 
 app.event("app_mention", async ({ event, say }) => {
+
+  // debugging
+  console.log('New event!');
+  console.dir(event);
+
   await say(`Hello, <@${event.user}>!`);
 });
 
