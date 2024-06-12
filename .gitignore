@@ -1,0 +1,4 @@
+/node_modules
+
+# products of secret_tool
+/.env.*
