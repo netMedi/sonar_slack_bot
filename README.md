@@ -18,7 +18,7 @@ npm install
 ## Run
 
 ```bash
-node run bot.ts
+npm start
 ```
 
 ## Docker/Podman (Cloud)
