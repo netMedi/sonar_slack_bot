@@ -2,13 +2,11 @@
   "name": "sonar_slack_bot",
   "module": "bot.ts",
   "type": "module",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "ts-node": "^1.0.0",
     "@slack/bolt": "^3.18.0",
     "client-oauth2": "^4.3.3",
     "node-fetch": "^3.3.2"

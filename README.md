@@ -3,7 +3,7 @@
 ## Requirements
 
 - bash
-- bun
+- node
 - podman/docker (for local containered run)
 - secret_tool (for development only)
 
@@ -11,13 +11,13 @@
 
 ```bash
 secret_tool local # extract secrets`
-bun install
+npm install
 ```
 
 ## Run
 
 ```bash
-bun run bot.ts
+node run bot.ts
 ```
 
 ## Docker/Podman (Cloud)
