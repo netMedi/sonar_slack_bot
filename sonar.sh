@@ -1,3 +1,3 @@
 #!/bin/sh
 
-node cli.ts "$@"
+node dist/cli.js "$@"
