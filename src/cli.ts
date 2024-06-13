@@ -31,6 +31,8 @@ for (let email of emails) {
       });
     }
   }
+
+  console.log("");
 }
 
 process.exit(0);
