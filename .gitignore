@@ -1,4 +1,5 @@
 /node_modules
+/dist
 
 # products of secret_tool
 /.env.*
