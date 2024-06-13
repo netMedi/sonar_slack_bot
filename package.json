@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "target": "es2022",
     "moduleResolution": "node",
+    "outDir": "./dist",
     "sourceMap": true
   },
   "lib": ["es2015"],

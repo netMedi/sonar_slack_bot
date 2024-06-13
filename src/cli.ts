@@ -14,22 +14,23 @@ if (!email.includes("@")) {
   process.exit(1);
 }
 
-if (email !== undefined && explanation !== undefined) {
-  console.log(`Searching for ${email}...`);
+const main = async () => {
+  if (email !== undefined && explanation !== undefined) {
+    console.log(`Searching for ${email}...`);
 
-  const patientSearch = new PatientSearch();
-  const results = await patientSearch.search(email); // Jaako, save us
+    const patientSearch = new PatientSearch();
+    const results = await patientSearch.search(email); // Jaako, save us
 
-  if (results.length === 0) {
-    console.log(`Couldn't find any patient with email address ${email}.`);
-  } else {
-    console.log(
-      `Found ${results.length} patients with email address ${email}:`
-    );
-    results.forEach((result) => {
-      console.log(result);
-    });
+    if (results.length === 0) {
+      console.log(`Couldn't find any patient with email address ${email}.`);
+    } else {
+      console.log(
+        `Found ${results.length} patients with email address ${email}:`
+      );
+      results.forEach((result) => {
+        console.log(result);
+      });
+    }
   }
-}
-
-process.exit(0);
+};
+main().then(() => process.exit(0));
