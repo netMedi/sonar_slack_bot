@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import ClientOAuth2 from "client-oauth2";
+// import ClientOAuth2 from "client-oauth2";
 import { SiteSettingsClient } from "./site-settings-client";
 import assert from "assert";
 
@@ -17,10 +17,30 @@ const getOauth2Config = () => {
 
 const getAuthToken = async (): Promise<string> => {
   const config = getOauth2Config();
-  const auth = new ClientOAuth2(config);
-  const token: ClientOAuth2.Token = await auth.credentials.getToken();
+  // const auth = new ClientOAuth2(config);
+  // const token: ClientOAuth2.Token = await auth.credentials.getToken();
 
-  return token.accessToken;
+  const response = await fetch(config.accessTokenUri, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "client_credentials",
+      client_id: config.clientId,
+      client_secret: config.clientSecret,
+    }).toString(),
+  });
+
+  if (response.ok) {
+    const token = (await response.json()) as { access_token: string };
+
+    return token.access_token;
+  } else {
+    throw new Error(
+      `Failed to get access token: ${response.status} ${response.statusText}`
+    );
+  }
 };
 
 export class PatientSearch {
@@ -31,8 +51,8 @@ export class PatientSearch {
       process.env.SITE_SETTINGS_URL
     );
 
-    const siteUrls = await siteSettingsClient.getSiteUrls();
-    // const siteUrls = ["http://localhost:8080"];
+    // const siteUrls = await siteSettingsClient.getSiteUrls();
+    const siteUrls = ["http://localhost:8080"];
 
     const authToken = await getAuthToken();
 
