@@ -1,2 +1,2 @@
 #!/bin/sh
-node ./bot.ts
+node dist/bot.js
