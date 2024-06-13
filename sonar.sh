@@ -1,3 +1,3 @@
 #!/bin/sh
 
-node dist/cli.js "$@"
+bun run src/cli.ts "$@"

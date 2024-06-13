@@ -1,27 +1,17 @@
 {
   "name": "sonar_slack_bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/bot.js",
-  "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es2022",
-    "moduleResolution": "node",
-    "sourceMap": true
+  "module": "bot.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
-  "lib": ["es2015"],
   "dependencies": {
     "@slack/bolt": "^3.18.0",
     "client-oauth2": "^4.3.3",
     "node-fetch": "^3.3.2"
   },
-  "devDependencies": {
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
-  },
   "scripts": {
-    "start": "dotenvx run -f .env.local -- ts-node src/bot.ts",
-    "build": "tsc"
+    "dev:start": "bun run src/bot.ts",
+    "dev:cli": "bun run src/cli.ts"
   }
 }

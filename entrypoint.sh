@@ -1,2 +1,2 @@
 #!/bin/sh
-node dist/bot.js
+bun run src/bot.ts
