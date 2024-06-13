@@ -4,14 +4,13 @@
   "description": "",
   "main": "dist/bot.js",
   "compilerOptions": {
-    "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es2022",
+    "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "./dist",
-    "sourceMap": true
+    "rootDir": "./src",
+    "target": "es2022"
   },
-  "lib": ["es2015"],
   "dependencies": {
     "@slack/bolt": "^3.18.0",
     "client-oauth2": "^4.3.3",
