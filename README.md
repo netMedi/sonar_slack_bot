@@ -3,8 +3,8 @@
 ## Requirements
 
 - bash
+- bun
 - dotenvx
-- node
 - podman/docker (for local containered run)
 - secret_tool (for development only)
 
@@ -18,7 +18,9 @@ npm install
 ## Run
 
 ```bash
-npm start
+bun run dev:start # to start Slack bot (WIP)
+
+bun run dev:cli # to start a CLI app for queries
 ```
 
 ## Docker/Podman (Cloud)
