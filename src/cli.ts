@@ -18,7 +18,7 @@ if (email !== undefined && explanation !== undefined) {
   console.log(`Searching for ${email}...`);
 
   const patientSearch = new PatientSearch();
-  const results = await patientSearch.search(email);
+  const results = await patientSearch.search(email); // Jaako, save us
 
   if (results.length === 0) {
     console.log(`Couldn't find any patient with email address ${email}.`);
