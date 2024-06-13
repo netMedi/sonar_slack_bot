@@ -41,11 +41,18 @@ export class PatientSearch {
       const requestUrl = `${baseUrl}${SEARCH_BY_EMAIL_PATH}?email=${encodeURIComponent(
         emailAddress
       )}`;
+
       const response = await fetch(requestUrl, {
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
-      return response.json();
+      if (!response.ok) {
+        console.log(`WARNING: Unexpected response from ${baseUrl}`);
+        console.log("status:", response.status);
+        console.error(await response.text());
+        return [];
+      }
+      return await response.json();
     });
 
     const results = await Promise.all(promises);
