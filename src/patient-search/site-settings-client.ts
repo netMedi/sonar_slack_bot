@@ -1,7 +1,7 @@
 import assert from "assert";
 import fetch from "node-fetch";
 
-const ALLOWED_SITES = ["staging-katedraali", "staging-horizon"];
+const ALLOWED_SITES = ["staging-katedraali", "staging-miracle"];
 
 type SiteSettings = {
   hostname: string;
