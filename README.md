@@ -3,6 +3,7 @@
 ## Requirements
 
 - bash
+- dotenvx
 - node
 - podman/docker (for local containered run)
 - secret_tool (for development only)

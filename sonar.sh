@@ -1,3 +1,3 @@
 #!/bin/sh
 
-node run cli.ts "$@"
+node cli.ts "$@"

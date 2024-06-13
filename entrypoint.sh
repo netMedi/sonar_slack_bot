@@ -1,2 +1,2 @@
 #!/bin/sh
-node run ./bot.ts
+node ./bot.ts
